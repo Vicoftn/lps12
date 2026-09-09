@@ -1,16 +1,17 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-// Motivo geométrico recorrente da marca: o monograma ACN é construído
-// inteiramente com arcos e retas (ver brandbook/MARCA). Estes componentes
-// reaproveitam esse gesto como assinatura visual discreta — nunca como
-// decoração genérica de "linha de tendência".
-
-// Dois arcos concêntricos que se desenham ao carregar a página — usado
-// atrás do texto do hero, em baixa opacidade.
+// Motivo geométrico recorrente da marca.
+// Dois arcos concêntricos que se desenham ao carregar a página.
 export function SignatureArcs({ className = "" }: { className?: string }) {
   const reduceMotion = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { 
+    setMounted(true);
+  }, []);
 
   return (
     <svg
@@ -18,34 +19,69 @@ export function SignatureArcs({ className = "" }: { className?: string }) {
       aria-hidden="true"
       className={`pointer-events-none absolute ${className}`}
     >
-      <motion.circle
-        cx="250"
-        cy="250"
-        r="238"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1"
-        initial={reduceMotion ? { opacity: 0.55 } : { pathLength: 0, opacity: 0.55 }}
-        animate={reduceMotion ? undefined : { pathLength: 1 }}
-        transition={{ duration: 2.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      />
-      <motion.circle
-        cx="250"
-        cy="250"
-        r="176"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1"
-        initial={reduceMotion ? { opacity: 0.3 } : { pathLength: 0, opacity: 0.3 }}
-        animate={reduceMotion ? undefined : { pathLength: 1 }}
-        transition={{ duration: 2.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      />
+      {!mounted ? (
+        <>
+          <circle
+            cx="250"
+            cy="250"
+            r="238"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            opacity="0.55"
+          />
+
+          <circle
+            cx="250"
+            cy="250"
+            r="176"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            opacity="0.3"
+          />
+        </>
+      ) : (
+        <>
+          <motion.circle
+            cx="250"
+            cy="250"
+            r="238"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            initial={{ pathLength: 0, opacity: 0.55 }}
+            animate={{ pathLength: 1, opacity: 0.55 }}
+            transition={{
+              duration: reduceMotion ? 0 : 2.2,
+              delay: reduceMotion ? 0 : 0.2,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          />
+
+          <motion.circle
+            cx="250"
+            cy="250"
+            r="176"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            initial={{ pathLength: 0, opacity: 0.3 }}
+            animate={{ pathLength: 1, opacity: 0.3 }}
+            transition={{
+              duration: reduceMotion ? 0 : 2.2,
+              delay: reduceMotion ? 0 : 0.5,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          />
+        </>
+      )}
     </svg>
   );
 }
 
-// Arco estático — usado como acento de fundo em blocos escuros de
-// fechamento e como resposta discreta ao hover em cards.
+
+// Arco estático.
 export function StaticArc({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -53,7 +89,14 @@ export function StaticArc({ className = "" }: { className?: string }) {
       aria-hidden="true"
       className={`pointer-events-none absolute ${className}`}
     >
-      <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" strokeWidth="1" />
+      <circle
+        cx="100"
+        cy="100"
+        r="94"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+      />
     </svg>
   );
 }

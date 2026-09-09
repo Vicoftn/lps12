@@ -8,6 +8,8 @@ import { Reveal } from "@/components/Reveal";
 import { PillarsList } from "@/components/PillarsList";
 import { EbookForm } from "@/components/EbookForm";
 import { SignatureArcs, StaticArc } from "@/components/ArcMotif";
+import { BlurReveal } from "@/components/spells/BlurReveal";
+import { RandomizedText } from "@/components/spells/RandomizedText";
 
 export const metadata: Metadata = {
   title: "Ana Carolina Nogueira — Harmonização Orofacial",
@@ -50,20 +52,22 @@ export default function PortfolioPage() {
 
         {/* 4.2 Filosofia / promessa da marca */}
         <Section id="filosofia" className="text-center">
-          <Reveal>
-            <p className="mx-auto max-w-2xl font-editorial text-2xl font-light leading-snug sm:text-4xl">
-              A beleza não precisa ser criada.
-              <br />
-              Ela precisa ser revelada.
-            </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mx-auto mt-6 max-w-md text-ink/60">
-              Cada rosto já carrega sua própria harmonia. O trabalho é reconhecê-la.
-            </p>
-          </Reveal>
-        </Section>
+          <BlurReveal
+            as="p"
+            className="mx-auto max-w-2xl font-editorial text-2xl font-light leading-snug sm:text-4xl"
+            speedReveal={1.8}
+            speedSegment={0.65}
+          >
+            A beleza não precisa ser criada. Ela precisa ser revelada.
+          </BlurReveal>
 
+          <RandomizedText 
+            className="mx-auto mt-6 max-w-md text-ink/60"
+            delay={0.25}
+            >
+              Cada rosto já carrega sua própria harmonia. O trabalho é reconhecê-la.
+          </RandomizedText>
+        </Section>
         {/* 4.3 Apresentação da Dra. Ana */}
         <Section className="grid grid-cols-1 items-center gap-10 sm:grid-cols-2 sm:gap-16">
           <Reveal>
