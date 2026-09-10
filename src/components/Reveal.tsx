@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { useEffect, useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
+import { useHasMounted } from "@/lib/useHasMounted";
 
 export function Reveal({
   children,
@@ -13,11 +14,7 @@ export function Reveal({
   className?: string;
 }) {
   const reduceMotion = useReducedMotion();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useHasMounted();
 
   // Durante SSR/hydration, não adicionamos animações.
   // Depois que o componente monta no navegador, o Motion assume.

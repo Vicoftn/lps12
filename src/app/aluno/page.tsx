@@ -8,6 +8,8 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { VideoTestimonials } from "@/components/VideoTestimonials";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SignatureArcs, StaticArc } from "@/components/ArcMotif";
+import { BlurReveal } from "@/components/spells/BlurReveal";
+import { RandomizedText } from "@/components/spells/RandomizedText";
 
 export const metadata: Metadata = {
   title: "Alunos",
@@ -61,12 +63,12 @@ export default function AlunoPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
           <SignatureArcs className="right-[-10%] top-[-8%] h-[min(70vw,620px)] w-[min(70vw,620px)] text-cream" />
           <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 sm:px-10 sm:pb-24">
-            <h1 className="max-w-lg font-editorial text-3xl font-light text-cream sm:text-5xl">
+            <BlurReveal as="h1" className="max-w-lg font-editorial text-3xl font-light text-cream sm:text-5xl">
               Aprender a ver um rosto antes de tocá-lo
-            </h1>
-            <p className="mt-3 max-w-md text-cream/90">
+            </BlurReveal>
+            <RandomizedText className="mt-3 block max-w-md text-cream/90" delay={0.3}>
               Formação em Harmonização Orofacial com Ana Carolina Nogueira.
-            </p>
+            </RandomizedText>
             <WhatsAppButton target="aluno" variant="ghost-light" className="mt-8">
               Entrar para a próxima turma
             </WhatsAppButton>
@@ -87,9 +89,9 @@ export default function AlunoPage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-2xl font-medium sm:text-3xl">
+            <BlurReveal as="h2" className="text-2xl font-medium sm:text-3xl" inView>
               Ensino que desperta, transforma e inspira
-            </h2>
+            </BlurReveal>
             <p className="mt-5 text-ink/70">
               Especialista em Prótese Dentária, Endodontia e Harmonização Orofacial.
               Mestre em Harmonização Orofacial, CEO da marca de ensino Be Younger
@@ -109,15 +111,12 @@ export default function AlunoPage() {
 
         {/* 4.3 O método de ensino */}
         <Section>
-          <Reveal>
-            <h2 className="text-2xl font-medium sm:text-3xl">
-              Um método, não uma coleção de técnicas
-            </h2>
-            <p className="mt-4 max-w-xl text-ink/70">
-              A formação não se resume a procedimentos isolados. Ela une três
-              pilares:
-            </p>
-          </Reveal>
+          <BlurReveal as="h2" className="text-2xl font-medium sm:text-3xl" inView>
+            Um método, não uma coleção de técnicas
+          </BlurReveal>
+          <RandomizedText className="mt-4 block max-w-xl text-ink/70" inView>
+            A formação não se resume a procedimentos isolados. Ela une três pilares:
+          </RandomizedText>
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
             {[
               { n: "01", t: "Fundamento científico", d: "Anatomia, técnica e segurança como base inegociável." },
@@ -135,9 +134,9 @@ export default function AlunoPage() {
 
         {/* 4.4 Estrutura da formação */}
         <Section className="text-center">
-          <Reveal>
-            <h2 className="text-2xl font-medium sm:text-3xl">Uma formação, não um curso avulso</h2>
-          </Reveal>
+          <BlurReveal as="h2" className="text-2xl font-medium sm:text-3xl" inView>
+            Uma formação, não um curso avulso
+          </BlurReveal>
           <Reveal delay={0.1}>
             <div className="mx-auto mt-6 max-w-2xl space-y-4 text-left text-ink/70">
               <p>
@@ -169,11 +168,9 @@ export default function AlunoPage() {
 
         {/* 4.5 Prova de resultado em outros profissionais */}
         <Section>
-          <Reveal>
-            <h2 className="mb-10 text-2xl font-medium sm:text-3xl">
-              Profissionais formados por este método
-            </h2>
-          </Reveal>
+          <BlurReveal as="h2" className="mb-10 text-2xl font-medium sm:text-3xl" inView>
+            Profissionais formados por este método
+          </BlurReveal>
           <Reveal delay={0.1}>
             <VideoTestimonials items={depoimentos} />
           </Reveal>
@@ -181,9 +178,9 @@ export default function AlunoPage() {
 
         {/* 4.6 FAQ de objeções profissionais */}
         <Section>
-          <Reveal>
-            <h2 className="mb-10 text-2xl font-medium sm:text-3xl">Perguntas frequentes</h2>
-          </Reveal>
+          <BlurReveal as="h2" className="mb-10 text-2xl font-medium sm:text-3xl" inView>
+            Perguntas frequentes
+          </BlurReveal>
           <FaqAccordion items={faq} />
         </Section>
 
@@ -200,10 +197,12 @@ export default function AlunoPage() {
           <StaticArc className="bottom-[-70%] left-[-12%] h-[min(620px,70vw)] w-[min(620px,70vw)] text-magenta opacity-30" />
           <div className="relative z-10 mx-auto w-full max-w-2xl px-6 py-24 text-center text-cream sm:px-10">
             <Reveal>
-              <h2 className="text-2xl font-medium sm:text-3xl">A próxima turma está próxima</h2>
-              <p className="mt-5 text-cream/85">
+              <BlurReveal as="h2" className="text-2xl font-medium sm:text-3xl" inView>
+                A próxima turma está próxima
+              </BlurReveal>
+              <RandomizedText className="mt-5 block text-cream/85" inView>
                 Converse com nossa equipe e conheça os detalhes da próxima formação.
-              </p>
+              </RandomizedText>
               <WhatsAppButton target="aluno" className="mt-8">
                 Entrar para a próxima turma
               </WhatsAppButton>

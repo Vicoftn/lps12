@@ -10,6 +10,7 @@ import { EbookForm } from "@/components/EbookForm";
 import { SignatureArcs, StaticArc } from "@/components/ArcMotif";
 import { BlurReveal } from "@/components/spells/BlurReveal";
 import { RandomizedText } from "@/components/spells/RandomizedText";
+import { FlowButton } from "@/components/FlowButton";
 
 export const metadata: Metadata = {
   title: "Ana Carolina Nogueira — Harmonização Orofacial",
@@ -35,17 +36,17 @@ export default function PortfolioPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
           <SignatureArcs className="right-[-10%] top-[-8%] h-[min(70vw,620px)] w-[min(70vw,620px)] text-cream" />
           <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 sm:px-10 sm:pb-24">
-            <h1 className="font-editorial text-4xl font-light text-cream sm:text-6xl">
-              Ana Carolina Nogueira
-            </h1>
-            <p className="mt-3 max-w-md text-cream/90">
-              Harmonização Orofacial. Ciência e arte a serviço da sua identidade.
-            </p>
-            <a
-              href="#filosofia"
-              className="mt-10 inline-block text-xs uppercase tracking-[0.2em] text-cream/70 transition-colors hover:text-cream"
+            <BlurReveal
+              as="h1"
+              className="font-editorial text-4xl font-light text-cream sm:text-6xl"
             >
-              Conheça a filosofia ↓
+              Ana Carolina Nogueira
+            </BlurReveal>
+            <RandomizedText className="mt-3 block max-w-md text-cream/90" delay={0.3}>
+              Harmonização Orofacial. Ciência e arte a serviço da sua identidade.
+            </RandomizedText>
+            <a href="#filosofia" className="mt-10 inline-block text-xs uppercase tracking-[0.2em]">
+              <FlowButton tone="light">Conheça a filosofia ↓</FlowButton>
             </a>
           </div>
         </section>
@@ -57,15 +58,13 @@ export default function PortfolioPage() {
             className="mx-auto max-w-2xl font-editorial text-2xl font-light leading-snug sm:text-4xl"
             speedReveal={1.8}
             speedSegment={0.65}
+            inView
           >
             A beleza não precisa ser criada. Ela precisa ser revelada.
           </BlurReveal>
 
-          <RandomizedText 
-            className="mx-auto mt-6 max-w-md text-ink/60"
-            delay={0.25}
-            >
-              Cada rosto já carrega sua própria harmonia. O trabalho é reconhecê-la.
+          <RandomizedText className="mx-auto mt-6 block max-w-md text-ink/60" delay={0.25} inView>
+            Cada rosto já carrega sua própria harmonia. O trabalho é reconhecê-la.
           </RandomizedText>
         </Section>
         {/* 4.3 Apresentação da Dra. Ana */}
@@ -82,9 +81,9 @@ export default function PortfolioPage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-2xl font-medium sm:text-3xl">
+            <BlurReveal as="h2" className="text-2xl font-medium sm:text-3xl" inView>
               Uma trajetória dedicada à precisão
-            </h2>
+            </BlurReveal>
             <p className="mt-5 text-ink/70">
               Há mais de 20 anos, Ana Carolina Nogueira dedica-se à Harmonização
               Orofacial como campo de estudo e de prática. Mestre na área, professora
@@ -104,21 +103,17 @@ export default function PortfolioPage() {
 
         {/* 4.4 Pilares da prática */}
         <Section>
-          <Reveal>
-            <h2 className="mb-10 text-2xl font-medium sm:text-3xl">
-              Cinco princípios guiam cada decisão
-            </h2>
-          </Reveal>
+          <BlurReveal as="h2" className="mb-10 text-2xl font-medium sm:text-3xl" inView>
+            Cinco princípios guiam cada decisão
+          </BlurReveal>
           <PillarsList />
         </Section>
 
         {/* 4.5 Prova de autoridade */}
         <Section>
-          <Reveal>
-            <h2 className="text-2xl font-medium sm:text-3xl">
-              Reconhecida por pares, formada pela experiência
-            </h2>
-          </Reveal>
+          <BlurReveal as="h2" className="text-2xl font-medium sm:text-3xl" inView>
+            Reconhecida por pares, formada pela experiência
+          </BlurReveal>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-3xl text-ink/70">
               Ao longo de sua trajetória, Ana Carolina Nogueira ministrou workshops,
@@ -155,9 +150,9 @@ export default function PortfolioPage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-2xl font-medium sm:text-3xl">
+            <BlurReveal as="h2" className="text-2xl font-medium sm:text-3xl" inView>
               Visagismo: a leitura que antecede toda harmonização
-            </h2>
+            </BlurReveal>
             <p className="mt-5 text-ink/70">
               Antes de qualquer procedimento, existe um olhar treinado para
               reconhecer proporção, simetria e identidade. Neste e-book, Ana Carolina
@@ -172,11 +167,9 @@ export default function PortfolioPage() {
 
         {/* 4.7 Bifurcação de caminhos */}
         <Section>
-          <Reveal>
-            <h2 className="mb-10 text-center text-2xl font-medium sm:text-3xl">
-              Dois caminhos. Uma mesma filosofia.
-            </h2>
-          </Reveal>
+          <BlurReveal as="h2" className="mb-10 text-center text-2xl font-medium sm:text-3xl" inView>
+            Dois caminhos. Uma mesma filosofia.
+          </BlurReveal>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
             <Reveal>
               <Link
@@ -193,12 +186,11 @@ export default function PortfolioPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
                 <StaticArc className="bottom-[-58%] right-[-24%] h-[74%] w-[74%] text-magenta opacity-25 transition-transform duration-500 ease-out group-hover:scale-125 group-hover:opacity-50" />
                 <div className="relative z-10 p-8 text-cream">
-                  <p className="text-sm text-cream/80">
-                    Para quem busca cuidado, segurança e um resultado que ainda
-                    parece seu.
-                  </p>
-                  <span className="mt-4 inline-block border-b border-cream/60 pb-1 text-lg font-medium">
-                    Quero ser paciente
+                  <RandomizedText className="block text-sm text-cream/80" inView>
+                    Para quem busca cuidado, segurança e um resultado que ainda parece seu.
+                  </RandomizedText>
+                  <span className="mt-4 inline-block text-lg font-medium">
+                    <FlowButton tone="light">Quero ser paciente</FlowButton>
                   </span>
                 </div>
               </Link>
@@ -218,12 +210,11 @@ export default function PortfolioPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
                 <StaticArc className="bottom-[-58%] right-[-24%] h-[74%] w-[74%] text-magenta opacity-25 transition-transform duration-500 ease-out group-hover:scale-125 group-hover:opacity-50" />
                 <div className="relative z-10 p-8 text-cream">
-                  <p className="text-sm text-cream/80">
-                    Para profissionais que buscam elevar sua prática com método e
-                    autoridade.
-                  </p>
-                  <span className="mt-4 inline-block border-b border-cream/60 pb-1 text-lg font-medium">
-                    Quero aprender com a Dra.
+                  <RandomizedText className="block text-sm text-cream/80" inView>
+                    Para profissionais que buscam elevar sua prática com método e autoridade.
+                  </RandomizedText>
+                  <span className="mt-4 inline-block text-lg font-medium">
+                    <FlowButton tone="light">Quero aprender com a Dra.</FlowButton>
                   </span>
                 </div>
               </Link>

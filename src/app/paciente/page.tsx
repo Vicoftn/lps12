@@ -8,6 +8,8 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { VideoTestimonials } from "@/components/VideoTestimonials";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { SignatureArcs, StaticArc } from "@/components/ArcMotif";
+import { BlurReveal } from "@/components/spells/BlurReveal";
+import { RandomizedText } from "@/components/spells/RandomizedText";
 
 export const metadata: Metadata = {
   title: "Pacientes",
@@ -61,12 +63,12 @@ export default function PacientePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
           <SignatureArcs className="right-[-10%] top-[-8%] h-[min(70vw,620px)] w-[min(70vw,620px)] text-cream" />
           <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 sm:px-10 sm:pb-24">
-            <h1 className="max-w-lg font-editorial text-3xl font-light text-cream sm:text-5xl">
+            <BlurReveal as="h1" className="max-w-lg font-editorial text-3xl font-light text-cream sm:text-5xl">
               O seu rosto já tem uma história. Nosso trabalho é entendê-la.
-            </h1>
-            <p className="mt-3 max-w-md text-cream/90">
+            </BlurReveal>
+            <RandomizedText className="mt-3 block max-w-md text-cream/90" delay={0.3}>
               Uma avaliação cuidadosa, antes de qualquer decisão.
-            </p>
+            </RandomizedText>
             <WhatsAppButton target="paciente" variant="ghost-light" className="mt-8">
               Agendar avaliação
             </WhatsAppButton>
@@ -75,9 +77,9 @@ export default function PacientePage() {
 
         {/* 4.2 Promessa aplicada */}
         <Section className="text-center">
-          <Reveal>
-            <h2 className="text-2xl font-medium sm:text-3xl">Harmonia, não transformação</h2>
-          </Reveal>
+          <BlurReveal as="h2" className="text-2xl font-medium sm:text-3xl" inView>
+            Harmonia, não transformação
+          </BlurReveal>
           <Reveal delay={0.1}>
             <p className="mx-auto mt-6 max-w-xl text-ink/70">
               Você não precisa de um rosto novo. Precisa de alguém que entenda o
@@ -89,15 +91,12 @@ export default function PacientePage() {
 
         {/* 4.3 Método / abordagem clínica */}
         <Section>
-          <Reveal>
-            <h2 className="text-2xl font-medium sm:text-3xl">
-              Um processo pensado em etapas, não em pressa
-            </h2>
-            <p className="mt-4 max-w-xl text-ink/70">
-              Cada avaliação segue um raciocínio técnico, construído ao longo de
-              mais de 20 anos de prática.
-            </p>
-          </Reveal>
+          <BlurReveal as="h2" className="text-2xl font-medium sm:text-3xl" inView>
+            Um processo pensado em etapas, não em pressa
+          </BlurReveal>
+          <RandomizedText className="mt-4 block max-w-xl text-ink/70" inView>
+            Cada avaliação segue um raciocínio técnico, construído ao longo de mais de 20 anos de prática.
+          </RandomizedText>
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
             {[
               { n: "01", t: "Escuta", d: "Entender o que você busca — e o que o seu rosto já tem para oferecer." },
@@ -115,9 +114,9 @@ export default function PacientePage() {
 
         {/* 4.4 A experiência de ser paciente */}
         <Section className="text-center">
-          <Reveal>
-            <h2 className="text-2xl font-medium sm:text-3xl">Cuidado do início ao fim</h2>
-          </Reveal>
+          <BlurReveal as="h2" className="text-2xl font-medium sm:text-3xl" inView>
+            Cuidado do início ao fim
+          </BlurReveal>
           <Reveal delay={0.1}>
             <p className="mx-auto mt-6 max-w-xl text-ink/70">
               A avaliação é o primeiro passo de um acompanhamento próximo. Cada
@@ -130,9 +129,9 @@ export default function PacientePage() {
 
         {/* 4.5 Prova social qualificada */}
         <Section>
-          <Reveal>
-            <h2 className="mb-10 text-2xl font-medium sm:text-3xl">O que dizem as pacientes</h2>
-          </Reveal>
+          <BlurReveal as="h2" className="mb-10 text-2xl font-medium sm:text-3xl" inView>
+            O que dizem as pacientes
+          </BlurReveal>
           <Reveal delay={0.1}>
             <VideoTestimonials items={depoimentos} />
           </Reveal>
@@ -140,9 +139,9 @@ export default function PacientePage() {
 
         {/* 4.6 FAQ de objeções */}
         <Section>
-          <Reveal>
-            <h2 className="mb-10 text-2xl font-medium sm:text-3xl">Perguntas frequentes</h2>
-          </Reveal>
+          <BlurReveal as="h2" className="mb-10 text-2xl font-medium sm:text-3xl" inView>
+            Perguntas frequentes
+          </BlurReveal>
           <FaqAccordion items={faq} />
         </Section>
 
@@ -159,11 +158,12 @@ export default function PacientePage() {
           <StaticArc className="bottom-[-70%] left-[-12%] h-[min(620px,70vw)] w-[min(620px,70vw)] text-magenta opacity-30" />
           <div className="relative z-10 mx-auto w-full max-w-2xl px-6 py-24 text-center text-cream sm:px-10">
             <Reveal>
-              <h2 className="text-2xl font-medium sm:text-3xl">O primeiro passo é uma conversa</h2>
-              <p className="mt-5 text-cream/85">
-                Agende sua avaliação e conheça, com clareza e sem pressa, o que é
-                possível para o seu rosto.
-              </p>
+              <BlurReveal as="h2" className="text-2xl font-medium sm:text-3xl" inView>
+                O primeiro passo é uma conversa
+              </BlurReveal>
+              <RandomizedText className="mt-5 block text-cream/85" inView>
+                Agende sua avaliação e conheça, com clareza e sem pressa, o que é possível para o seu rosto.
+              </RandomizedText>
               <WhatsAppButton target="paciente" className="mt-8">
                 Agendar avaliação
               </WhatsAppButton>

@@ -1,17 +1,13 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useHasMounted } from "@/lib/useHasMounted";
 
 // Motivo geométrico recorrente da marca.
 // Dois arcos concêntricos que se desenham ao carregar a página.
 export function SignatureArcs({ className = "" }: { className?: string }) {
   const reduceMotion = useReducedMotion();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => { 
-    setMounted(true);
-  }, []);
+  const mounted = useHasMounted();
 
   return (
     <svg

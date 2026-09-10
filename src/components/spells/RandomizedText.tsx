@@ -40,11 +40,18 @@ export function RandomizedText({
     }));
   }, [children, split]);
 
+  // Jitter com "cara" de aleatório, mas determinístico (função pura de i)
+  // — Math.random() direto no corpo do componente viola a regra de pureza
+  // do React e pode gerar valores diferentes a cada nova renderização.
   const randomizedDelays = useMemo(() => {
-    return elements.map(() =>
-      delay + Math.random() * 0.2 + Math.random() * 0.03
+    const pseudoRandom = (seed: number) => {
+      const x = Math.sin(seed * 12.9898) * 43758.5453;
+      return x - Math.floor(x);
+    };
+    return elements.map((_, i) =>
+      delay + pseudoRandom(i) * 0.2 + pseudoRandom(i + 0.5) * 0.03
     );
-  }, [elements.length, delay]);
+  }, [elements, delay]);
 
   const variants = {
     hidden: { opacity: 0 },
