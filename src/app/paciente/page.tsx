@@ -37,11 +37,9 @@ const faq = [
   },
 ];
 
-// TODO: substituir pelos IDs reais dos vídeos no YouTube (não listado) assim
-// que o upload for feito — ver knowledge/05-decision-log.md.
 const depoimentos = [
-  { youtubeId: "SUBSTITUIR_LINA", nome: "Lina Carvalho", atribuicao: "Paciente" },
-  { youtubeId: "SUBSTITUIR_MITSUY", nome: "Mitsuy Kuriyama", atribuicao: "Paciente" },
+  { youtubeId: "https://youtube.com/shorts/YNW_Q7T1oUE?feature=share", nome: "Lina Carvalho", atribuicao: "Paciente" },
+  { youtubeId: "https://youtube.com/shorts/A2DNLg9mT6o?feature=share", nome: "Mitsuy Kuriyama", atribuicao: "Paciente" },
 ];
 
 export default function PacientePage() {
