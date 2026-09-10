@@ -170,16 +170,16 @@ export default function PortfolioPage() {
 
         {/* 4.7 Bifurcação de caminhos */}
         <Section>
-          <div className="mb-10 text-center">
-            <HighlightedText
-              as="h2"
-              tone="magenta"
-              inView
-              className="text-2xl font-medium sm:text-3xl"
-            >
-              Dois caminhos. Uma mesma filosofia.
+          <h2 className="mb-10 text-center text-2xl font-medium sm:text-3xl">
+            <HighlightedText tone="magenta" from="right" inView>
+              Dois
+            </HighlightedText>{" "}
+            caminhos. Uma mesma{" "}
+            <HighlightedText tone="magenta" from="bottom" inView>
+              filosofia
             </HighlightedText>
-          </div>
+            .
+          </h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
             <Reveal>
               <Link
