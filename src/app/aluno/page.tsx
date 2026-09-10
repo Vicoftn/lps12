@@ -36,12 +36,10 @@ const faq = [
   },
 ];
 
-// TODO: substituir pelos IDs reais dos vídeos no YouTube (não listado) assim
-// que o upload for feito — ver knowledge/05-decision-log.md.
 const depoimentos = [
-  { youtubeId: "SUBSTITUIR_CINTIA", nome: "Cintia Viviani", atribuicao: "Ex-aluna" },
-  { youtubeId: "SUBSTITUIR_GABRIELA", nome: "Gabriela Zborowski", atribuicao: "Ex-aluna" },
-  { youtubeId: "SUBSTITUIR_PABLO", nome: "Pablo Alejandro", atribuicao: "Ex-aluno internacional" },
+  { youtubeId: "https://youtube.com/shorts/jJQjp210JAA?feature=share", nome: "Cintia Viviani", atribuicao: "Ex-aluna" },
+  { youtubeId: "https://youtube.com/shorts/sfLtGaOAPPI?feature=share", nome: "Gabriela Zborowski", atribuicao: "Ex-aluna" },
+  { youtubeId: "https://youtube.com/shorts/-BgsgoqwFeA?feature=share", nome: "Pablo Alejandro", atribuicao: "Ex-aluno internacional" },
 ];
 
 export default function AlunoPage() {
