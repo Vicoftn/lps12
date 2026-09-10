@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { JSX } from "react";
 import { cn } from "@/lib/utils";
 
 type From = "left" | "right" | "top" | "bottom";
+type Tone = "ink" | "magenta";
 
 interface HighlightedTextProps {
   children: React.ReactNode;
@@ -12,6 +14,8 @@ interface HighlightedTextProps {
   delay?: number;
   inView?: boolean;
   once?: boolean;
+  tone?: Tone;
+  as?: keyof JSX.IntrinsicElements;
 }
 
 const fromVariants = {
@@ -40,22 +44,26 @@ export function HighlightedText({
   delay = 0,
   inView = false,
   once = true,
+  tone = "ink",
+  as = "span",
 }: HighlightedTextProps) {
   const variants = fromVariants[from];
+  const MotionTag = motion[as as keyof typeof motion] as typeof motion.span;
+  const isMagenta = tone === "magenta";
 
   return (
-    <motion.span
-      className={cn(
-        "relative inline-flex overflow-hidden align-baseline",
-        className,
-      )}
+    <MotionTag
+      className={cn("relative inline-flex overflow-hidden align-baseline", className)}
       initial="hidden"
       whileInView={inView ? "visible" : undefined}
       animate={inView ? undefined : "visible"}
       viewport={{ once }}
     >
       <motion.span
-        className="absolute inset-0 -left-[0.15em] -right-[0.18em] bg-black dark:bg-white z-0"
+        className={cn(
+          "absolute inset-0 -left-[0.15em] -right-[0.18em] z-0",
+          isMagenta ? "bg-magenta" : "bg-black dark:bg-white",
+        )}
         variants={variants}
         transition={{
           type: "spring",
@@ -64,10 +72,15 @@ export function HighlightedText({
           delay,
         }}
       />
-      <span className="relative z-10 mix-blend-difference text-white pl-[0.15em] pr-[0.18em]">
+      <span
+        className={cn(
+          "relative z-10 pl-[0.15em] pr-[0.18em]",
+          isMagenta ? "text-cream" : "mix-blend-difference text-white",
+        )}
+      >
         {children}
       </span>
-    </motion.span>
+    </MotionTag>
   );
 }
 

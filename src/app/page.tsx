@@ -10,6 +10,7 @@ import { EbookForm } from "@/components/EbookForm";
 import { SignatureArcs, StaticArc } from "@/components/ArcMotif";
 import { BlurReveal } from "@/components/spells/BlurReveal";
 import { RandomizedText } from "@/components/spells/RandomizedText";
+import { HighlightedText } from "@/components/spells/HighlightedText";
 import { FlowButton } from "@/components/FlowButton";
 
 export const metadata: Metadata = {
@@ -169,9 +170,16 @@ export default function PortfolioPage() {
 
         {/* 4.7 Bifurcação de caminhos */}
         <Section>
-          <BlurReveal as="h2" className="mb-10 text-center text-2xl font-medium sm:text-3xl" inView>
-            Dois caminhos. Uma mesma filosofia.
-          </BlurReveal>
+          <div className="mb-10 text-center">
+            <HighlightedText
+              as="h2"
+              tone="magenta"
+              inView
+              className="text-2xl font-medium sm:text-3xl"
+            >
+              Dois caminhos. Uma mesma filosofia.
+            </HighlightedText>
+          </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
             <Reveal>
               <Link
