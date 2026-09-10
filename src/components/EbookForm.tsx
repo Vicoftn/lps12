@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { FlowButton } from "./FlowButton";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -65,9 +66,9 @@ export function EbookForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex items-center justify-center rounded-full bg-ink px-8 py-3 text-sm tracking-wide text-cream transition-colors hover:bg-magenta disabled:opacity-60"
+        className="inline-flex shrink-0 items-center whitespace-nowrap py-3 text-sm tracking-wide disabled:opacity-60"
       >
-        {status === "loading" ? "Enviando…" : "Receber o e-book"}
+        <FlowButton tone="dark">{status === "loading" ? "Enviando…" : "Receber o e-book"}</FlowButton>
       </button>
       {status === "error" && (
         <p role="alert" className="text-sm text-magenta sm:basis-full">
