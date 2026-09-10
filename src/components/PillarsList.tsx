@@ -30,17 +30,21 @@ const pillars = [
 
 // Tratamento editorial deliberado — não um grid de cards/ícones.
 // Ver knowledge/05-decision-log.md, "Decisão — Apresentação dos 5 pilares".
-export function PillarsList() {
+export function PillarsList({ dark = false }: { dark?: boolean }) {
+  const divider = dark ? "divide-cream/15 border-cream/15" : "divide-ink/10 border-ink/10";
+  const title = dark ? "text-cream" : "text-ink";
+  const body = dark ? "text-cream/70" : "text-ink/70";
+
   return (
-    <div className="divide-y divide-ink/10 border-y border-ink/10">
+    <div className={`divide-y border-y ${divider}`}>
       {pillars.map((p, i) => (
         <Reveal key={p.n} delay={i * 0.05}>
           <div className="flex flex-col gap-2 py-8 sm:flex-row sm:items-baseline sm:gap-10 sm:py-10">
             <span className="font-accent text-sm text-magenta sm:w-12 sm:shrink-0">
               {p.n}
             </span>
-            <h3 className="text-xl font-medium sm:w-56 sm:shrink-0">{p.nome}</h3>
-            <p className="max-w-xl text-ink/70">{p.texto}</p>
+            <h3 className={`text-xl font-medium sm:w-56 sm:shrink-0 ${title}`}>{p.nome}</h3>
+            <p className={`max-w-xl ${body}`}>{p.texto}</p>
           </div>
         </Reveal>
       ))}

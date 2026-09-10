@@ -101,13 +101,15 @@ export default function PortfolioPage() {
           </Reveal>
         </Section>
 
-        {/* 4.4 Pilares da prática */}
-        <Section>
-          <BlurReveal as="h2" className="mb-10 text-2xl font-medium sm:text-3xl" inView>
-            Cinco princípios guiam cada decisão
-          </BlurReveal>
-          <PillarsList />
-        </Section>
+        {/* 4.4 Pilares da prática — fundo escuro, respiro entre as seções claras */}
+        <section className="w-full bg-ink">
+          <div className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 sm:py-28">
+            <BlurReveal as="h2" className="mb-10 text-2xl font-medium text-cream sm:text-3xl" inView>
+              Cinco princípios guiam cada decisão
+            </BlurReveal>
+            <PillarsList dark />
+          </div>
+        </section>
 
         {/* 4.5 Prova de autoridade */}
         <Section>

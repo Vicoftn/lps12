@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { FlowButton } from "./FlowButton";
+import { BorderBeam } from "./BorderBeam";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -66,9 +66,12 @@ export function EbookForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex shrink-0 items-center whitespace-nowrap py-3 text-sm tracking-wide disabled:opacity-60"
+        className="relative inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-ink px-8 py-3 text-sm tracking-wide text-cream disabled:opacity-60"
       >
-        <FlowButton tone="dark">{status === "loading" ? "Enviando…" : "Receber o e-book"}</FlowButton>
+        <BorderBeam />
+        <span className="relative z-10">
+          {status === "loading" ? "Enviando…" : "Receber o e-book"}
+        </span>
       </button>
       {status === "error" && (
         <p role="alert" className="text-sm text-magenta sm:basis-full">

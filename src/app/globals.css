@@ -41,6 +41,19 @@ html {
   }
 }
 
+/* Feixe animado que corre pela borda de um elemento — ver BorderBeam.tsx */
+@property --border-beam-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes border-beam-spin {
+  to {
+    --border-beam-angle: 360deg;
+  }
+}
+
 ::selection {
   background: var(--color-magenta);
   color: var(--color-cream);
