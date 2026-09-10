@@ -179,7 +179,7 @@ export default function PortfolioPage() {
                 className="group relative flex aspect-[4/5] w-full flex-col justify-end overflow-hidden rounded-sm"
               >
                 <Image
-                  src="/images/paciente-warm.jpg"
+                  src="/images/7G1A4557.jpg"
                   alt="Quero ser paciente"
                   fill
                   sizes="(min-width: 640px) 50vw, 100vw"
