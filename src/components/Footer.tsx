@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { contact, whatsappHref } from "@/lib/content";
@@ -9,7 +10,17 @@ export function Footer({ showAlunoCrossLink = false }: { showAlunoCrossLink?: bo
   return (
     <footer className="border-t border-ink/10 bg-cream">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-4 px-6 py-12 text-center sm:px-10">
-        <Logo className="h-4 w-auto text-ink/60" />
+        <div className="flex items-center gap-4">
+          <Logo className="h-4 w-auto text-ink/60" />
+          <span className="h-4 w-px bg-ink/15" aria-hidden="true" />
+          <Image
+            src="/brand/beyounger-hof.png"
+            alt="Be Younger HOF"
+            width={1252}
+            height={296}
+            className="h-4 w-auto opacity-60"
+          />
+        </div>
         <p className="text-sm text-ink/70">{contact.linhaInstitucional}</p>
         <p className="text-xs leading-relaxed text-ink/50">
           {contact.endereco} · {contact.telefoneExibicao} · {contact.email}

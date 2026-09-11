@@ -94,7 +94,7 @@ export default function AlunoPage() {
             </BlurReveal>
             <p className="mt-5 text-ink/70">
               Especialista em Prótese Dentária, Endodontia e Harmonização Orofacial.
-              Mestre em Harmonização Orofacial, CEO da marca de ensino Be Younger
+              Mestre em Harmonização Orofacial, CEO da marca de ensino BeYounger
               HOF, coordenadora de pós-graduação em HOF e palestrante. Ana Carolina
               Nogueira construiu, ao longo de mais de 20 anos, um método próprio —
               testado em consultório, refinado em sala de aula. Ensina o que pratica
@@ -169,7 +169,7 @@ export default function AlunoPage() {
         {/* 4.5 Prova de resultado em outros profissionais */}
         <Section>
           <BlurReveal as="h2" className="mb-10 text-2xl font-medium sm:text-3xl" inView>
-            Profissionais formados por este método
+            Profissionais formados pelo método BeYounger HOF
           </BlurReveal>
           <Reveal delay={0.1}>
             <VideoTestimonials items={depoimentos} />
