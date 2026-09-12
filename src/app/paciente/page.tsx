@@ -42,6 +42,8 @@ const faq = [
 const depoimentos = [
   { youtubeId: "https://youtube.com/shorts/YNW_Q7T1oUE?feature=share", nome: "Lina Carvalho", atribuicao: "Paciente" },
   { youtubeId: "https://youtube.com/shorts/A2DNLg9mT6o?feature=share", nome: "Mitsuy Kuriyama", atribuicao: "Paciente" },
+  { youtubeId: "https://youtube.com/shorts/b9B1BZMRcMg?feature=share", nome: "Dora Oliveira", atribuicao: "Paciente"},
+
 ];
 
 export default function PacientePage() {

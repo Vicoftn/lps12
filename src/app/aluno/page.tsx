@@ -42,6 +42,8 @@ const depoimentos = [
   { youtubeId: "https://youtube.com/shorts/jJQjp210JAA?feature=share", nome: "Cintia Viviani", atribuicao: "Ex-aluna" },
   { youtubeId: "https://youtube.com/shorts/sfLtGaOAPPI?feature=share", nome: "Gabriela Zborowski", atribuicao: "Ex-aluna" },
   { youtubeId: "https://youtube.com/shorts/-BgsgoqwFeA?feature=share", nome: "Pablo Alejandro", atribuicao: "Ex-aluno internacional" },
+  { youtubeId: "https://youtube.com/shorts/wa2C1KfE7AI?feature=share", nome: "Kauane Reis", atribuicao: "Ex-Monitora" },
+
 ];
 
 export default function AlunoPage() {
