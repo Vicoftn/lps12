@@ -28,4 +28,4 @@ export const contact = {
   instagramEnsino: "@acnodontoligafacial",
 } as const;
 
-export const siteUrl = "https://www.draanacarolinanogueira.com.br";
+export const siteUrl = "https://www.acnodontologia.com.br";

@@ -22,7 +22,7 @@ const azuko = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.draanacarolinanogueira.com.br"),
+  metadataBase: new URL("https://www.acnodontologia.com.br"),
   title: {
     default: "Ana Carolina Nogueira — Harmonização Orofacial",
     template: "%s — Ana Carolina Nogueira",
