@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# PDFs grandes (e-book) — nunca versionar; vão pro Vercel Blob
+*.pdf
