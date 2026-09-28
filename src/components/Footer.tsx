@@ -21,7 +21,9 @@ export function Footer({ showAlunoCrossLink = false }: { showAlunoCrossLink?: bo
             className="h-4 w-auto opacity-60"
           />
         </div>
-        <p className="text-sm text-ink/70">{contact.linhaInstitucional}</p>
+        <p className="text-sm text-ink/70">
+          {contact.linhaInstitucional} · {contact.cro}
+        </p>
         <p className="text-xs leading-relaxed text-ink/50">
           {contact.endereco} · {contact.telefoneExibicao} · {contact.email}
           <br />
@@ -37,12 +39,20 @@ export function Footer({ showAlunoCrossLink = false }: { showAlunoCrossLink?: bo
             É profissional da área? Conheça a formação
           </a>
         )}
-        <Link
-          href="/"
-          className="mt-2 text-xs tracking-wide text-ink/50 underline decoration-ink/20 underline-offset-4 transition-colors hover:text-magenta"
-        >
-          Voltar ao início
-        </Link>
+        <div className="mt-2 flex items-center gap-5">
+          <Link
+            href="/"
+            className="text-xs tracking-wide text-ink/50 underline decoration-ink/20 underline-offset-4 transition-colors hover:text-magenta"
+          >
+            Voltar ao início
+          </Link>
+          <Link
+            href="/privacidade"
+            className="text-xs tracking-wide text-ink/50 underline decoration-ink/20 underline-offset-4 transition-colors hover:text-magenta"
+          >
+            Política de Privacidade
+          </Link>
+        </div>
       </div>
     </footer>
   );

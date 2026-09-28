@@ -21,6 +21,7 @@ export function whatsappHref(target: keyof typeof whatsapp) {
 
 export const contact = {
   linhaInstitucional: "Ana Carolina Nogueira — Harmonização Orofacial",
+  cro: "CRO-PR 12088",
   endereco: "Av. Mal. Floriano Peixoto, 306 – cj. 61",
   telefoneExibicao: "(41) 98506-6632",
   email: "ananogueira_98@yahoo.com",

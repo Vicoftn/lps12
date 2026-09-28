@@ -1,5 +1,14 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { contact, siteUrl } from "@/lib/content";
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
 
 // Envia o e-book por e-mail via Resend. O PDF (112MB) não vai como anexo —
 // nenhum provedor de e-mail aceita anexos desse tamanho — vai como link de
@@ -42,11 +51,12 @@ export async function POST(request: Request) {
   }
 
   const resend = new Resend(apiKey);
-  const primeiroNome = nome.split(" ")[0];
+  const primeiroNome = escapeHtml(nome.split(" ")[0]);
 
   const { error } = await resend.emails.send({
     from,
     to: email,
+    replyTo: contact.email,
     subject: "Seu e-book de Visagismo na HOF",
     html: `
       <div style="font-family: Georgia, serif; color: #212121; max-width: 480px; margin: 0 auto;">
@@ -61,8 +71,18 @@ export async function POST(request: Request) {
             Baixar o e-book
           </a>
         </p>
-        <p style="color:#777;font-size:13px;">
-          Ana Carolina Nogueira — Harmonização Orofacial
+        <p style="color:#777;font-size:13px;margin-bottom:4px;">
+          ${contact.linhaInstitucional}
+        </p>
+        <p style="color:#777;font-size:13px;margin-top:0;">
+          ${contact.cro}
+        </p>
+        <hr style="border:none;border-top:1px solid #ddd;margin:24px 0;" />
+        <p style="color:#999;font-size:12px;line-height:1.5;">
+          Você recebeu este e-mail porque solicitou o e-book em ${siteUrl.replace("https://", "")}.
+          Usamos seu nome e e-mail apenas para este envio. Para pedir a exclusão dos seus dados,
+          basta responder a esta mensagem. Saiba mais na
+          <a href="${siteUrl}/privacidade" style="color:#999;">Política de Privacidade</a>.
         </p>
       </div>
     `,

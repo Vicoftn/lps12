@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import { BorderBeam } from "./BorderBeam";
 
 type Status = "idle" | "missing" | "loading" | "success" | "error";
@@ -101,7 +102,16 @@ export function EbookForm() {
           Não foi possível enviar agora. Tente novamente em instantes.
         </p>
       )}
-      <p className="text-xs text-ink/50">Usamos seu e-mail apenas para enviar este conteúdo.</p>
+      <p className="text-xs text-ink/50">
+        Usamos seu e-mail apenas para enviar este conteúdo. Ao enviar, você concorda com a{" "}
+        <Link
+          href="/privacidade"
+          className="underline decoration-ink/20 underline-offset-4 transition-colors hover:text-magenta"
+        >
+          Política de Privacidade
+        </Link>
+        .
+      </p>
     </form>
   );
 }
