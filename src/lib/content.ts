@@ -23,7 +23,7 @@ export const contact = {
   linhaInstitucional: "Ana Carolina Nogueira — Harmonização Orofacial",
   cro: "CRO-PR 12088",
   endereco: "Av. Mal. Floriano Peixoto, 306 – Conj. 61 – Centro, Curitiba – PR, 80010-130",
-  telefoneExibicao: "(41) 98506-6632",
+  telefoneExibicao: "(41) 3223-1147",
   email: "ananogueira_98@yahoo.com",
   instagramPessoal: "@dra.carolnogueira_",
   instagramEnsino: "@acnodontoligafacial",
