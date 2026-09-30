@@ -1,3 +1,6 @@
+"use client";
+
+import { track } from "@vercel/analytics";
 import { whatsappHref, whatsapp } from "@/lib/content";
 import { FlowButton } from "./FlowButton";
 
@@ -24,7 +27,13 @@ export function WhatsAppButton({
   className?: string;
 }) {
   return (
-    <a href={whatsappHref(target)} target="_blank" rel="noopener noreferrer" className={className}>
+    <a
+      href={whatsappHref(target)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+      onClick={() => track("whatsapp_click", { persona: target })}
+    >
       <FlowButton tone={toneByVariant[variant]}>{children}</FlowButton>
     </a>
   );

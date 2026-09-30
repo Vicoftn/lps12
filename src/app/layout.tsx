@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const blauerNue = localFont({
@@ -41,6 +43,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="pt-BR" className={`${blauerNue.variable} ${azuko.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-cream text-ink antialiased">
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

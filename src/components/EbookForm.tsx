@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 import { BorderBeam } from "./BorderBeam";
 
 type Status = "idle" | "missing" | "loading" | "success" | "error";
@@ -37,8 +38,10 @@ export function EbookForm() {
       });
       if (!response.ok) throw new Error("request failed");
       setStatus("success");
+      track("ebook_download");
     } catch {
       setStatus("error");
+      track("ebook_download_error");
     }
   }
 
