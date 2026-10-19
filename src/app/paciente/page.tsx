@@ -12,8 +12,9 @@ import { BlurReveal } from "@/components/spells/BlurReveal";
 import { RandomizedText } from "@/components/spells/RandomizedText";
 
 export const metadata: Metadata = {
-  title: "Pacientes",
-  description: "Uma avaliação cuidadosa, antes de qualquer decisão.",
+  title: "Harmonização Orofacial em Curitiba",
+  description:
+    "Avaliação individual com Ana Carolina Nogueira. Ciência e sensibilidade estética a serviço da sua identidade.",
 };
 
 const faq = [

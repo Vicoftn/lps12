@@ -12,8 +12,9 @@ import { BlurReveal } from "@/components/spells/BlurReveal";
 import { RandomizedText } from "@/components/spells/RandomizedText";
 
 export const metadata: Metadata = {
-  title: "Alunos",
-  description: "Formação em Harmonização Orofacial com Ana Carolina Nogueira.",
+  title: "Mentoria VIP Full Face em Curitiba",
+  description:
+    "Formação em Harmonização Orofacial com Ana Carolina Nogueira, CEO da Be Younger HOF.",
 };
 
 const faq = [
