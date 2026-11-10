@@ -9,6 +9,7 @@ import { FlowButton } from "@/components/FlowButton";
 // aqui. Mantém a pessoa dentro da identidade da marca, com caminho de volta.
 export const metadata = {
   title: "Página não encontrada",
+  robots: { index: false, follow: true },
 };
 
 export default function NotFound() {

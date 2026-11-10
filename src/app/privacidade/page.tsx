@@ -7,6 +7,7 @@ import { contact } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Política de Privacidade",
   description: "Como tratamos os dados pessoais informados neste site.",
+  alternates: { canonical: "/privacidade" },
 };
 
 const topicos = [

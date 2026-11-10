@@ -29,4 +29,15 @@ export const contact = {
   instagramEnsino: "@acnodontoligafacial",
 } as const;
 
+// Mesmo endereço de `contact.endereco`, em campos separados — usado nos
+// dados estruturados (JSON-LD). Precisa ficar idêntico ao Perfil da
+// Empresa no Google (ver knowledge/05-decision-log.md, Decisão 020).
+export const enderecoEstruturado = {
+  streetAddress: "Av. Mal. Floriano Peixoto, 306 – Conj. 61 – Centro",
+  addressLocality: "Curitiba",
+  addressRegion: "PR",
+  postalCode: "80010-130",
+  addressCountry: "BR",
+} as const;
+
 export const siteUrl = "https://www.acnodontologia.com.br";

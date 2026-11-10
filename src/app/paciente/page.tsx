@@ -15,6 +15,13 @@ export const metadata: Metadata = {
   title: "Harmonização Orofacial em Curitiba",
   description:
     "Avaliação individual com Ana Carolina Nogueira. Ciência e sensibilidade estética a serviço da sua identidade.",
+  alternates: { canonical: "/paciente" },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "Ana Carolina Nogueira",
+    images: [{ url: "/og/paciente.jpg", width: 1200, height: 630 }],
+  },
 };
 
 const faq = [
