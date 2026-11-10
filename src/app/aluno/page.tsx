@@ -15,6 +15,13 @@ export const metadata: Metadata = {
   title: "Mentoria VIP Full Face em Curitiba",
   description:
     "Formação em Harmonização Orofacial com Ana Carolina Nogueira, CEO da Be Younger HOF.",
+  alternates: { canonical: "/aluno" },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "Ana Carolina Nogueira",
+    images: [{ url: "/og/aluno.jpg", width: 1200, height: 630 }],
+  },
 };
 
 const faq = [

@@ -16,6 +16,13 @@ import { FlowButton } from "@/components/FlowButton";
 export const metadata: Metadata = {
   title: "Ana Carolina Nogueira — Harmonização Orofacial",
   description: "Harmonização Orofacial. Ciência e arte a serviço da sua identidade.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "Ana Carolina Nogueira",
+    images: [{ url: "/og/portfolio.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function PortfolioPage() {
@@ -188,7 +195,7 @@ export default function PortfolioPage() {
               >
                 <Image
                   src="/images/7G1A4557.jpg"
-                  alt="Quero ser paciente"
+                  alt="Ana Carolina Nogueira em retrato editorial, com blazer branco"
                   fill
                   sizes="(min-width: 640px) 50vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -212,7 +219,7 @@ export default function PortfolioPage() {
               >
                 <Image
                   src="/images/aluno-editorial.jpg"
-                  alt="Quero aprender com a Dra."
+                  alt="Ana Carolina Nogueira em retrato editorial, com vestido preto e branco"
                   fill
                   sizes="(min-width: 640px) 50vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

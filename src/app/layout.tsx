@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { LocalBusinessJsonLd } from "@/components/LocalBusinessJsonLd";
 import "./globals.css";
 
 const blauerNue = localFont({
@@ -35,6 +36,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     siteName: "Ana Carolina Nogueira",
+    images: [{ url: "/og/portfolio.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
@@ -43,6 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="pt-BR" className={`${blauerNue.variable} ${azuko.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-cream text-ink antialiased">
         {children}
+        <LocalBusinessJsonLd />
         <Analytics />
         <SpeedInsights />
       </body>
